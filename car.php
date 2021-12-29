@@ -7,20 +7,34 @@ class Car
     private int $nbSeats;
     private string $energie;
     private int $energieLevel;
+    private bool $hasParkBrake;
 
-    public function __construct(string $color, int $nbSeats, string $energie)
+
+
+    public function __construct (string $color, int $nbSeats, string $energie, bool $hasParkBrake)
     {
         $this->color = $color;
         $this->nbSeats = $nbSeats;
         $this->energie = $energie;
     }
+
+    public function setParkBrake()
+    {
+        if($haParkBrake = true){
+            $this->hasParkBrake=false;
+        } else $this->hasParkBrake=true;
+    }
     public function start(): string
     {
-        $sentence="Get ready";
-        while ($this->currentSpeed = 0) {
-            $this->currentSpeed++;
+        if ($hasParkBrake = false) {
+            throw new Exception("la voiture roule dèja!");
+        } else {
+            $sentence = "Get ready";
+            while ($this->currentSpeed = 0) {
+                $this->currentSpeed++;
+            }
+            return $sentence;
         }
-        return $sentence;
     }
     public function forward ():string
     {
